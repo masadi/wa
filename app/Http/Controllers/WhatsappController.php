@@ -154,27 +154,27 @@ class WhatsappController extends Controller
                         }
                 }
             }
-        } else {
-            $noWelcome = $request->welcome;
-            $to = '6285231444789';
-            $welcomeStr = ($noWelcome) ? "```📢 Incorrect command 📢 ```\nPlease type one of these *commands*:\n" : "welcome to ultramsg bot Demo \n";
-            $client->sendChatMessage(
-                $to,
-                $welcomeStr .
-                    "\n" .
-                    "1️⃣ : Show server time.\n" .
-                    "2️⃣ : Send Image.\n" .
-                    "3️⃣ : Send Document.\n" .
-                    "4️⃣ : Send Audio.\n" .
-                    "5️⃣ : Send Voice.\n" .
-                    "6️⃣ : Send Video.\n" .
-                    "7️⃣ : Send Contact.\n" .
-                    "8️⃣ : Send Random Sentence.\n" .
-                    "9️⃣ : Send Random Joke.\n" .
-                    "🔟 : Send Random Image.\n"
-
-            );
         }
+    }
+    public function welcome($to, $noWelcome = false)
+    {
+        $welcomeStr = ($noWelcome) ? "```📢 Incorrect command 📢 ```\nPlease type one of these *commands*:\n" : "welcome to ultramsg bot Demo \n";
+        $this->client->sendChatMessage(
+            $to,
+            $welcomeStr .
+                "\n" .
+                "1️⃣ : Show server time.\n" .
+                "2️⃣ : Send Image.\n" .
+                "3️⃣ : Send Document.\n" .
+                "4️⃣ : Send Audio.\n" .
+                "5️⃣ : Send Voice.\n" .
+                "6️⃣ : Send Video.\n" .
+                "7️⃣ : Send Contact.\n" .
+                "8️⃣ : Send Random Sentence.\n" .
+                "9️⃣ : Send Random Joke.\n" .
+                "🔟 : Send Random Image.\n"
+
+        );
     }
     public function convert($string)
     {
