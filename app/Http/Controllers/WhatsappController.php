@@ -109,7 +109,14 @@ class WhatsappController extends Controller
                             break;
                         }
                     case '2': {
-                            $client->sendImageMessage($to, "image Caption", url('images/test.jpg'));
+                            $img = file_get_contents(
+                            'https://media.geeksforgeeks.org/wp-content/uploads/geeksforgeeks-22.png');
+                              
+                            // Encode the image string data into base64
+                            $data = base64_encode($img);
+                              
+                            // Display the output
+                            $client->sendImageMessage($to, "image Caption", $data);
                             break;
                         }
                     case '3': {
@@ -156,6 +163,7 @@ class WhatsappController extends Controller
                 }
             }
         }
+        echo url('images/test.jpg');
         dump($client);
         //\Log::Info(json_encode($client));
     }
