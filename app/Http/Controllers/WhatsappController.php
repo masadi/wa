@@ -115,7 +115,6 @@ class WhatsappController extends Controller
                             $referenceId="SDK";
                             $nocache=false; 
                             $client->sendImageMessage($to,$image,$caption,$priority,$referenceId,$nocache);
-                            $client->sendChatMessage($to, 'gagal kirim gambar');
                             break;
                         }
                     case '3': {
@@ -162,9 +161,6 @@ class WhatsappController extends Controller
                 }
             }
         }
-        echo url('images/test.jpg');
-        dump($client);
-        //\Log::Info(json_encode($client));
     }
     public function welcome($to, $noWelcome = false)
     {
@@ -172,7 +168,7 @@ class WhatsappController extends Controller
         $instance_id="instance15890"; // Ultramsg.com instance id
         $client = new WhatsAppApi($ultramsg_token,$instance_id);
         $welcomeStr = ($noWelcome) ? "```📢 Incorrect command 📢 ```\nPlease type one of these *commands*:\n" : "welcome to ultramsg bot Demo \n";
-        $client->sendChatMessage(
+        /*$client->sendChatMessage(
             $to,
             $welcomeStr .
                 "\n" .
@@ -187,7 +183,7 @@ class WhatsappController extends Controller
                 "9️⃣ : Send Random Joke.\n" .
                 "🔟 : Send Random Image.\n"
 
-        );
+        );*/
     }
     public function convert($string)
     {
