@@ -1,5 +1,6 @@
 <?php
-
+use UltraMsg\WhatsAppApi;
+use App\ultramsgDictionary;
 new ultraMsgChatBot("x2epn697nmzwnolg", "instance15890");
 
 class ultraMsgChatBot
@@ -13,12 +14,12 @@ class ultraMsgChatBot
         //require_once ('vendor/autoload.php'); // if you use Composer 
         //composer require ultramsg/whatsapp-php-sdk
         //test
-        require_once('ultramsg.class.php'); //Latest 2.0.3 stable
+        //require_once('ultramsg.class.php'); //Latest 2.0.3 stable
         //Include a dictionary to generate random words and sentences
-        require_once('ultramsg-dictionary.php');
+        //require_once('ultramsg-dictionary.php');
 
         $ultramsgDictionary = new ultramsgDictionary();
-        $this->client = new UltraMsg\WhatsAppApi($ultramsg_token, $instance_id);
+        $this->client = new WhatsAppApi($ultramsg_token, $instance_id);
 
         //get the JSON body from the instance
         $json = file_get_contents('php://input');
