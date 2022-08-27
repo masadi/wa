@@ -77,7 +77,7 @@ Route::post('/webhooks/inbound', function(Request $request) {
         Log::Info($random);
         $respond_number = $number * $random;
         Log::Info($respond_number);
-        $url = "https://messages-sandbox.nexmo.com/v0.1/messages";
+        $url = "https://messages-sandbox.nexmo.com/v1/messages";
         /*$params = ["to" => ["type" => "whatsapp", "number" => $data['from']['number']],
             "from" => ["type" => "whatsapp", "number" => "14157386102"],
             "message" => [
