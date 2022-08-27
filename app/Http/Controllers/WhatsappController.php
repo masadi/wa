@@ -109,14 +109,12 @@ class WhatsappController extends Controller
                             break;
                         }
                     case '2': {
-                            $img = file_get_contents(
-                            'https://media.geeksforgeeks.org/wp-content/uploads/geeksforgeeks-22.png');
-                              
-                            // Encode the image string data into base64
-                            $data = base64_encode($img);
-                              
-                            // Display the output
-                            $client->sendImageMessage($to, "image Caption", $data);
+                            $image="https://file-example.s3-accelerate.amazonaws.com/images/test.jpg"; 
+                            $caption="image Caption"; 
+                            $priority=10;
+                            $referenceId="SDK";
+                            $nocache=false; 
+                            $client->sendImageMessage($to,$image,$caption,$priority,$referenceId,$nocache);
                             break;
                         }
                     case '3': {
