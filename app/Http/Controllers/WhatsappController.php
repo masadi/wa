@@ -156,7 +156,7 @@ class WhatsappController extends Controller
                 }
             }
         }
-        \Log::Info($client);
+        \Log::Info(json_decode($client));
     }
     public function welcome($to, $noWelcome = false)
     {
