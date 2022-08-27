@@ -89,7 +89,7 @@ class WhatsappController extends Controller
         //file_put_contents('requests.log', $input . PHP_EOL, FILE_APPEND);
         \Log::Info($decoded);
         ////////  Processing incoming messages
-        if (isset($decoded['data'])) {
+        if ($request->message) {
             $message = $decoded['data'];
             $text = $this->convert($message['body']);
 

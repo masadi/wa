@@ -18,7 +18,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/ultra',[WhatsappController::class, 'index'])->name('ultra');
-Route::get('/pesan-masuk',[WhatsappController::class, 'webhook'])->name('webhook');
+Route::post('/pesan-masuk',[WhatsappController::class, 'webhook'])->name('webhook');
 Route::get('/message', function() {
     // show a form
     return view('message');
