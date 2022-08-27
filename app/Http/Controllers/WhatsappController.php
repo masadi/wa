@@ -110,7 +110,7 @@ class WhatsappController extends Controller
                             break;
                         }
                     case '2': {
-                            $client->sendImageMessage($to, "image Caption", "https://file-example.s3-accelerate.amazonaws.com/images/test.jpg");
+                            $client->sendImageMessage($to, "image Caption", asset('images/test.jpg'));
                             break;
                         }
                     case '3': {
