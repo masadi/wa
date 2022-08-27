@@ -74,7 +74,7 @@ class WhatsappController extends Controller
         $api=$client->sendVcardMessage($to,$vcard);
         dump($api);
     }
-    public function webhook(Request $request){
+    public function webhook_old(Request $request){
         $ultramsg_token="x2epn697nmzwnolg"; // Ultramsg.com token
         $instance_id="instance15890"; // Ultramsg.com instance id
         $ultramsgDictionary = new ultramsgDictionary();
