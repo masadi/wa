@@ -88,8 +88,7 @@ class WhatsappController extends Controller
         //$input = ob_get_contents();
         //ob_end_clean();
         //file_put_contents('requests.log', $input . PHP_EOL, FILE_APPEND);
-        \Log::info('gak masuk');
-        \Log::Info($decoded);
+        //\Log::Info($decoded);
         ////////  Processing incoming messages
         if (isset($decoded['data'])) {
             $message = $decoded['data'];
@@ -157,6 +156,7 @@ class WhatsappController extends Controller
                 }
             }
         }
+        \Log::Info($client);
     }
     public function welcome($to, $noWelcome = false)
     {
