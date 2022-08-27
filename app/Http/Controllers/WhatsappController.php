@@ -75,6 +75,9 @@ class WhatsappController extends Controller
         dump($api);
         \Log::info($api);
     }
+    public function webhook(Request $request){
+        \Log::info('new');
+    }
     public function webhook_old(Request $request){
         $ultramsg_token="x2epn697nmzwnolg"; // Ultramsg.com token
         $instance_id="instance15890"; // Ultramsg.com instance id
