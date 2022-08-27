@@ -89,7 +89,6 @@ class WhatsappController extends Controller
         //ob_end_clean();
         //file_put_contents('requests.log', $input . PHP_EOL, FILE_APPEND);
         \Log::info('gak masuk');
-        \Log::Info($request->all());
         \Log::Info($decoded);
         ////////  Processing incoming messages
         if (isset($decoded['data'])) {
