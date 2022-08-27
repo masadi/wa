@@ -73,9 +73,9 @@ class WhatsappController extends Controller
         $vcard = preg_replace("/[\n\r]/", "\n", $vcard);
         $api=$client->sendVcardMessage($to,$vcard);
         dump($api);
+        \Log::info($api);
     }
     public function webhook_old(Request $request){
-        a
         $ultramsg_token="x2epn697nmzwnolg"; // Ultramsg.com token
         $instance_id="instance15890"; // Ultramsg.com instance id
         $ultramsgDictionary = new ultramsgDictionary();
@@ -161,6 +161,7 @@ class WhatsappController extends Controller
     }
     public function welcome($to, $noWelcome = false)
     {
+        \Log::info($to);
         $welcomeStr = ($noWelcome) ? "```📢 Incorrect command 📢 ```\nPlease type one of these *commands*:\n" : "welcome to ultramsg bot Demo \n";
         $this->client->sendChatMessage(
             $to,
