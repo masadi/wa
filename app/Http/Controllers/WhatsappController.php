@@ -81,15 +81,6 @@ class WhatsappController extends Controller
         $ultramsgDictionary = new ultramsgDictionary();
         $client = new WhatsAppApi($ultramsg_token,$instance_id);
         $decoded = $request->all();
-        //dump($decoded);
-        //write parsed JSON to the 'requests.log' for debugging
-        //ob_start();
-        //var_dump($decoded);
-        //$input = ob_get_contents();
-        //ob_end_clean();
-        //file_put_contents('requests.log', $input . PHP_EOL, FILE_APPEND);
-        //\Log::Info($decoded);
-        ////////  Processing incoming messages
         if (isset($decoded['data'])) {
             $message = $decoded['data'];
             $text = $this->convert($message['body']);
