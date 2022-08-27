@@ -115,6 +115,7 @@ class WhatsappController extends Controller
                             $referenceId="SDK";
                             $nocache=false; 
                             $client->sendImageMessage($to,$image,$caption,$priority,$referenceId,$nocache);
+                            $client->sendChatMessage($to, 'gagal kirim gambar');
                             break;
                         }
                     case '3': {
