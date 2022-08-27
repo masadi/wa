@@ -75,6 +75,7 @@ class WhatsappController extends Controller
         dump($api);
     }
     public function webhook(Request $request){
+        a
         $ultramsg_token="x2epn697nmzwnolg"; // Ultramsg.com token
         $instance_id="instance15890"; // Ultramsg.com instance id
         $ultramsgDictionary = new ultramsgDictionary();
