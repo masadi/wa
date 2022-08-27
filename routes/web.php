@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
-
+use App\Http\Controllers\WhatsappController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,7 +17,7 @@ use Illuminate\Http\Request;
 Route::get('/', function () {
     return view('welcome');
 });
-
+Route::get('/ultra',[WhatsappController::class, 'index'])->name('ultra');
 Route::get('/message', function() {
     // show a form
     return view('message');
