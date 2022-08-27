@@ -172,7 +172,6 @@ class WhatsappController extends Controller
         $ultramsg_token="x2epn697nmzwnolg"; // Ultramsg.com token
         $instance_id="instance15890"; // Ultramsg.com instance id
         $client = new WhatsAppApi($ultramsg_token,$instance_id);
-        \Log::info($to);
         $welcomeStr = ($noWelcome) ? "```📢 Incorrect command 📢 ```\nPlease type one of these *commands*:\n" : "welcome to ultramsg bot Demo \n";
         $client->sendChatMessage(
             $to,
