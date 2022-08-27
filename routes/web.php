@@ -29,9 +29,11 @@ Route::post('/message', function(Request $request) {
     $NEXMO_API_SECRET = 'WhvXkp6TDDZfoKwN';
     $headers = ["Authorization" => "Basic " . base64_encode($NEXMO_API_KEY . ":" . $NEXMO_API_SECRET)];
     $url = "https://messages-sandbox.nexmo.com/v1/messages";
+    $to = $request->input('number');
+    //$to = "6287864496339";
     $params = [
         "from" => "14157386102",
-        "to" => "6287864496339",
+        "to" => $to,
         "message_type" => "text",
         "text" => "This is a WhatsApp Message sent from the Messages API",
         "channel" => "whatsapp"
