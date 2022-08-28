@@ -92,7 +92,7 @@ class WhatsappController extends Controller
                 switch ($val) {
                     case in_array($val, $ultramsgDictionary->welcomeIntent()): {
                             $randMsg = $ultramsgDictionary->welcomeResponses();
-                            $client->sendChatMessage($to, $randMsg);
+                            //$client->sendChatMessage($to, $randMsg);
                             break;
                         }
                     case '1': {
