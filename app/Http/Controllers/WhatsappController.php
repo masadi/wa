@@ -140,7 +140,11 @@ class WhatsappController extends Controller
                         }
 
                     case '10': {
-                            $client->sendImageMessage($to, "Random Image", $ultramsgDictionary->generateRandomImage());
+                        $caption="image Caption"; 
+                            $priority=10;
+                            $referenceId="SDK";
+                            $nocache=false; 
+                            $client->sendImageMessage($to, $ultramsgDictionary->generateRandomImage(), "Random Image", $priority,$referenceId,$nocache);
                             break;
                         }
 
