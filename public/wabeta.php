@@ -1,8 +1,4 @@
-                                              
-
 <?php 
- 
- 
  header('content-type: application/json');
  $data = json_decode(file_get_contents('php://input'), true);
  file_put_contents('whatsapp.txt', '[' . date('Y-m-d H:i:s') . "]\n" . json_encode($data) . "\n\n", FILE_APPEND);                                               
