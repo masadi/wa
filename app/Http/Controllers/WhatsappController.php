@@ -227,6 +227,7 @@ class WhatsappController extends Controller
                             break;
                         }
                 }
+                Log::info($respon);
                 return response()->json($respon);
             }
         }
