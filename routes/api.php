@@ -18,3 +18,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 Route::post('/pesan-masuk',[WhatsappController::class, 'webhook'])->name('post-webhook');
+Route::post('/pesan-wabeta',[WhatsappController::class, 'wabeta'])->name('post-wabeta');
